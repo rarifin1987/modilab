@@ -13,6 +13,8 @@ from functools import lru_cache
 from pathlib import Path
 
 LOCALE_DIR = Path(__file__).parent / "locales"
+CONTENT_DIR = Path(__file__).parent / "content"
+SIM_MARKER = "<!-- SIM -->"
 LANGUAGES = {"id": "Bahasa Indonesia", "en": "English"}
 DEFAULT = "id"
 
@@ -45,3 +47,26 @@ class Translator:
     @property
     def plotly_separators(self) -> str:
         return ",." if self.code == "id" else ".,"
+
+
+@lru_cache(maxsize=None)
+def module_text(code: str, name: str) -> tuple[str, str]:
+    """Learning text of a module, split at the simulation marker.
+
+    Returns (text shown before the simulation, text shown after it).
+    Falls back to English if the translation does not exist yet.
+    """
+    path = CONTENT_DIR / code / f"{name}.md"
+    if not path.exists():
+        path = CONTENT_DIR / "en" / f"{name}.md"
+    text = path.read_text(encoding="utf-8")
+    before, _, after = text.partition(SIM_MARKER)
+    return before.strip(), after.strip()
+
+
+@lru_cache(maxsize=None)
+def quiz(code: str) -> dict:
+    path = CONTENT_DIR / code / "quiz.json"
+    if not path.exists():
+        path = CONTENT_DIR / "en" / "quiz.json"
+    return json.loads(path.read_text(encoding="utf-8"))
