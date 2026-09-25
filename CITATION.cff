@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "MoDiLab: a bilingual virtual laboratory with guided modules for teaching molecular dynamics"
+type: software
+authors:
+  - family-names: Arifin
+    given-names: Rizal
+    orcid: "https://orcid.org/0000-0002-3917-9963"
+    affiliation: "Department of Mechanical Engineering, Universitas Muhammadiyah Ponorogo, Indonesia"
+version: 0.3.1
+date-released: 2026-09-25
+license: MIT
+repository-code: "https://github.com/rarifin1987/modilab"
+url: "https://modilab-umpo.streamlit.app"
+keywords:
+  - molecular dynamics
+  - Lennard-Jones
+  - physics education
+  - virtual laboratory
+  - Streamlit
