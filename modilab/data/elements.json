@@ -1,0 +1,12 @@
+{
+  "_source": {
+    "citation": "D. V. Schroeder, Interactive molecular dynamics, Am. J. Phys. 83(3), 210-218 (2015), Table I; values adapted there from G. C. Maitland et al., Intermolecular Forces: Their Origin and Determination (Clarendon Press, Oxford, 1981).",
+    "doi": "10.1119/1.4901185",
+    "note": "Approximate parameters. The epsilon values can vary by 10% or more depending on the experimental data used for fitting. Masses are IUPAC standard atomic weights."
+  },
+  "He": {"name_id": "Helium",  "name_en": "Helium",  "mass_u": 4.0026,  "sigma_nm": 0.264, "epsilon_K": 10.9, "quantum_warning": true},
+  "Ne": {"name_id": "Neon",    "name_en": "Neon",    "mass_u": 20.180,  "sigma_nm": 0.274, "epsilon_K": 41.2, "quantum_warning": true},
+  "Ar": {"name_id": "Argon",   "name_en": "Argon",   "mass_u": 39.948,  "sigma_nm": 0.335, "epsilon_K": 142.0, "quantum_warning": false},
+  "Kr": {"name_id": "Kripton", "name_en": "Krypton", "mass_u": 83.798,  "sigma_nm": 0.358, "epsilon_K": 199.0, "quantum_warning": false},
+  "Xe": {"name_id": "Xenon",   "name_en": "Xenon",   "mass_u": 131.29,  "sigma_nm": 0.380, "epsilon_K": 281.0, "quantum_warning": false}
+}
